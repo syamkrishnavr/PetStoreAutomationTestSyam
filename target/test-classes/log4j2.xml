@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <!-- Appenders: Defines where logs should be sent -->
+    <Appenders>
+        <!-- Console appender: Logs will be printed to the console -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!-- PatternLayout for formatting log output -->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level: %msg%n%throwable"/>
+        </Console>
+
+        <!-- File appender: Logs will be written to a log file -->
+        <File name="File" fileName="logs/app.log">
+            <!-- RollingFile appender: Helps to manage large logs with rolling -->
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level: %msg%n%throwable"/>
+        </File>
+    </Appenders>
+
+    <!-- Loggers: Defines which logs should be captured -->
+    <Loggers>
+        <!-- Root logger: Captures all logs at or above the INFO level -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+
+        <!-- Custom logger: A specific logger for a class or package -->
+        <Logger name="com.example" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+    </Loggers>
+</Configuration>
