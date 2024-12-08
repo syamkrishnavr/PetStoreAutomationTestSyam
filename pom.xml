@@ -129,10 +129,6 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
-
-					<includes>
-						<include>src/test/java/api/test/DDTests.java</include>
-					</includes>
 				</configuration>
 			</plugin>
 
@@ -141,8 +137,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.11.0</version> <!-- Specify the plugin version -->
 				<configuration>
-					<source>21</source> <!-- Specify the Java version for source code -->
-					<target>21</target> <!-- Specify the Java version for compiled bytecode -->
+					<source>1</source> <!-- Specify the Java version for source code -->
+					<target>11</target> <!-- Specify the Java version for compiled bytecode -->
 				</configuration>
 			</plugin>
 		</plugins>
